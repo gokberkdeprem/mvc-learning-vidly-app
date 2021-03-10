@@ -181,11 +181,28 @@
     <Compile Include="Migrations\202103100640403_InitialModel.Designer.cs">
       <DependentUpon>202103100640403_InitialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103100729185_AddIsSubscribedToCustomer.cs" />
+    <Compile Include="Migrations\202103100729185_AddIsSubscribedToCustomer.Designer.cs">
+      <DependentUpon>202103100729185_AddIsSubscribedToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103100732478_AddMemberShipType.cs" />
+    <Compile Include="Migrations\202103100732478_AddMemberShipType.Designer.cs">
+      <DependentUpon>202103100732478_AddMemberShipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103100739475_PopulateMembershipTypes.cs" />
+    <Compile Include="Migrations\202103100739475_PopulateMembershipTypes.Designer.cs">
+      <DependentUpon>202103100739475_PopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103100800488_ApplyAnnotationsToCustomerName.cs" />
+    <Compile Include="Migrations\202103100800488_ApplyAnnotationsToCustomerName.Designer.cs">
+      <DependentUpon>202103100800488_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -274,6 +291,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202103100640403_InitialModel.resx">
       <DependentUpon>202103100640403_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103100729185_AddIsSubscribedToCustomer.resx">
+      <DependentUpon>202103100729185_AddIsSubscribedToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103100732478_AddMemberShipType.resx">
+      <DependentUpon>202103100732478_AddMemberShipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103100739475_PopulateMembershipTypes.resx">
+      <DependentUpon>202103100739475_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103100800488_ApplyAnnotationsToCustomerName.resx">
+      <DependentUpon>202103100800488_ApplyAnnotationsToCustomerName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
