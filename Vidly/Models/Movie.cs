@@ -18,8 +18,9 @@ namespace Vidly.Models
         
         public DateTime CreatedDate { get; set; }
 
-        [Required]
+        
         public Genre Genre { get; set; }
+        [Required]
         public int GenreId { get; set; }
 
 
