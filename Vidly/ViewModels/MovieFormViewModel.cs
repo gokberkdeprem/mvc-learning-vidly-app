@@ -23,9 +23,6 @@ namespace Vidly.ViewModels
                     return "New Movie";
                 }
             } 
-
-            
-            
         }
 
     }
