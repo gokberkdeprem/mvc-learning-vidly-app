@@ -27,7 +27,8 @@ namespace Vidly.Controllers
             var membershiptypes = _context.MembershipTypes.ToList();
             var viewModel = new NewCustomerViewModel
             {
-                MembershipTypes = membershiptypes,
+                Customer = new Customer(),
+                MembershipTypes = membershiptypes
             };
 
             return View("CustomerForm",viewModel);
@@ -35,6 +36,18 @@ namespace Vidly.Controllers
         [HttpPost]
         public ActionResult Save(Customer customer)//Action Name Was Create
         {
+
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new NewCustomerViewModel
+                {
+                    Customer = customer, //it must be same with what was submitted to show same values
+                    MembershipTypes = _context.MembershipTypes.ToList() // we need to add this, it is used in customer form
+                };
+
+                return View("CustomerForm", viewModel);
+            }
+
 
             if(customer.ID == 0)
             {
