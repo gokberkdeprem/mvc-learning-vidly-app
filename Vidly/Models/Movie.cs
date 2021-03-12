@@ -14,6 +14,7 @@ namespace Vidly.Models
         [StringLength(255)]
         public string Name { get; set; }
         
+        [Required]
         public DateTime ReleaseDate { get; set; }
         
         public DateTime CreatedDate { get; set; }
@@ -24,7 +25,7 @@ namespace Vidly.Models
         [Display(Name=("Genre"))]
         public int GenreId { get; set; }
 
-
+        [Range(1,20,ErrorMessage ="The field Number in Stock must be between 1 and 20")]
         public byte NumberInStock { get; set; }
 
 
