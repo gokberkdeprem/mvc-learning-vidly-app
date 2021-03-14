@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -24,7 +25,11 @@ namespace Vidly.Controllers.Api
         //GET /api/customers
         public IEnumerable<CustomerDto> GetCustomers()
         {
-                return _context.Customers.ToList().Select(Mapper.Map<Customer,CustomerDto>);
+            //we use eager loading to show memberership type on Api
+            return _context.Customers
+                .Include(c=>c.MembershipType)
+                .ToList()
+                .Select(Mapper.Map<Customer,CustomerDto>);
         }
 
         //public IEnumerable<Customer> GetCustomers()

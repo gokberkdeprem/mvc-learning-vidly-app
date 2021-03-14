@@ -13,8 +13,12 @@ namespace Vidly.Dto
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
+        
+        //We cannot write like this because this couples dto membership object, so we need to create new model MembershipDto
+        //public MembershipType MembershipType { get; set; }
+        public MembershipTypeDto MembershipType{ get; set; }
 
-       // [Min18YearsIfAMember] 
+        // [Min18YearsIfAMember] 
         public DateTime? BirthDate { get; set; }
 
         public bool IsSubscribedToNewsLetter { get; set; }
