@@ -71,8 +71,8 @@ namespace Vidly.Controllers
 
         public ViewResult Index()
         {
-            var customers = _context.Customers.Include(c => c.MembershipType).ToList();
-            return View(customers);
+            //we deleted db call for customer.Insted, we use Api to fetch data on the view using jQuery
+            return View();
         }
 
         public ActionResult Edit(int id)
