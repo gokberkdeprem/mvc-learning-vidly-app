@@ -22,7 +22,7 @@
     <script>
         $(document).ready(function () {
             //feeding data table using customer's api
-            $("#customers").DataTable({
+            var table = $("#customers").DataTable({ //check [2]
                 ajax: {
                     url: "/api/customers",
                     dataSrc: "" // we don't need to give customer because it is an array -> check [1] at the bottom
@@ -56,7 +56,7 @@
                             url: "api/customers/" + button.attr("data-customer-id"),
                             method: "DELETE",
                             success: function () {
-                                button.parents("tr").remove();
+                                table.row(button.parents("tr")).remove().draw();//[2]
                             }
                         })
                     }
@@ -68,21 +68,26 @@
 }
 
 @*[1] If our api were like the code below, we should add Data source "customer" object but our array is like the second one
-    so we need to keep it blank
+     so we need to keep it blank
 
-   a) {
-        count : 10,
-        customers : [
-            {...},
-            {...},
-            ...
-    ]
-    }
+    a) {
+         count : 10,
+         customers : [
+             {...},
+             {...},
+             ...
+     ]
+     }
 
-    b)[
-      {...},
-      {...},
-       ...
-    ]
+     b)[
+       {...},
+       {...},
+        ...
+     ]
+
+     [2]We removed the tr but we didn't updated the table. To do this we added var table = table(we gave a reference) then add
+     table.row(button.parents("tr")).remove().draw(); It rerenders the table because there is reference
+
+    button.parents("tr").remove();
 
 *@
